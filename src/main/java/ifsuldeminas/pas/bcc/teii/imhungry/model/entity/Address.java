@@ -14,8 +14,7 @@ public class Address {
     private String district;
     private String complement;
     private int number;
-//    private City city;
-
+    private City city;
 
     public long getId() {
         return id;
@@ -63,5 +62,13 @@ public class Address {
 
     public void setNumber(int number) {
         this.number = number;
+    }
+
+    public City getCity() {
+        return city;
+    }
+
+    public void setCity(City city) {
+        this.city = city;
     }
 }
