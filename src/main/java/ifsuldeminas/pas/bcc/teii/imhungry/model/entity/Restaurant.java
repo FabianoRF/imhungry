@@ -4,8 +4,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="class")
+@DiscriminatorValue(value="restaurant")
 
 public class Restaurant {
     @Id

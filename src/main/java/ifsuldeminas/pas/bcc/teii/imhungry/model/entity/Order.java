@@ -12,11 +12,17 @@ public class Order {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
+    @OneToOne
     private Customer customer;
+    @OneToOne
     private Restaurant restaurant;
+    @OneToMany
+    @JoinColumn(name="order_id")
     private ArrayList<Food> foods;
+    @OneToOne
     private PaymentMethod clientPaymentMethod;
     private long productId;
+    @OneToOne
     private Address deliveryAddress;
     private String status;
     private Double totalPrice;
