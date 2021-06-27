@@ -4,15 +4,17 @@ import javax.persistence.*;
 import java.util.ArrayList;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="class")
+@DiscriminatorValue(value="restaurant")
 
 public class Restaurant {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
     private String cnpj;
+
+    @OneToOne
     private Address address;
+    @OneToMany(mappedBy = "restaurant")
     private ArrayList<Food> foodMenu;
 
     public long getId() {

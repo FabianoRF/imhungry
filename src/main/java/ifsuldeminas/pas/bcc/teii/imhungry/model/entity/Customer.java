@@ -7,18 +7,23 @@ import java.util.ArrayList;
 // TODO: como lidar com classes filhas em relação ao ORM?
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="class")
+@DiscriminatorValue(value="customer")
 public class Customer extends User{
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
     private String cpf;
     private String age;
+
+    @OneToMany
+    @JoinColumn(name="customer_id")
     private ArrayList<Address> addresses;
+
+    @OneToMany
+    @JoinColumn(name="customer_id")
     private ArrayList<PaymentMethod> paymentMethods;
 
-// atenção aos atributos faltantes
+
 
     @Override
     public long getId() {
