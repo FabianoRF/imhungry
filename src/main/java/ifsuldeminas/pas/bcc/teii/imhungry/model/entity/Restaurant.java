@@ -12,7 +12,10 @@ public class Restaurant {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
     private String cnpj;
+
+    @OneToOne
     private Address address;
+    @OneToMany(mappedBy = "restaurant")
     private ArrayList<Food> foodMenu;
 
     public long getId() {

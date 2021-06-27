@@ -9,10 +9,12 @@ public class Food {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
+    @OneToOne
     private Address title;
     private String description;
     private String price;
     private  int quantity;
+    @ManyToOne
     private  Restaurant restaurant;
 
     public long getId() {

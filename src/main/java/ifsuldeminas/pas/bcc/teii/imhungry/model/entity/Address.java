@@ -9,6 +9,7 @@ public class Address {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
+    @OneToOne
     private User user;
     private String road;
     private String district;
