@@ -11,9 +11,12 @@ public class Cart {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
+
+    @OneToOne
     private Customer customer;
     private String price;
     private int quantity;
+    @OneToMany(mappedBy = "cart")
     private ArrayList<Food> foods;
 
     public long getId() {
