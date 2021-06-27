@@ -15,10 +15,16 @@ public class Customer extends User{
     private long id;
     private String cpf;
     private String age;
+
+    @OneToMany
+    @JoinColumn(name="customer_id")
     private ArrayList<Address> addresses;
+
+    @OneToMany
+    @JoinColumn(name="customer_id")
     private ArrayList<PaymentMethod> paymentMethods;
 
-// atenção aos atributos faltantes
+
 
     @Override
     public long getId() {

@@ -14,6 +14,7 @@ public class Address {
     private String district;
     private String complement;
     private int number;
+    @OneToOne
     private City city;
 
     public long getId() {
