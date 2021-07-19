@@ -3,37 +3,23 @@ package ifsuldeminas.pas.bcc.teii.imhungry.model.entity;
 //import java.util.ArrayList;
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 // TODO: como lidar com classes filhas em relação ao ORM?
 
 @Entity
 @DiscriminatorValue(value="customer")
 public class Customer extends User{
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private long id;
     private String cpf;
     private String age;
 
     @OneToMany
-    @JoinColumn(name="customer_id")
-    private ArrayList<Address> addresses;
+    @JoinColumn(name="user_id")
+    private List<Address> addresses;
 
     @OneToMany
-    @JoinColumn(name="customer_id")
-    private ArrayList<PaymentMethod> paymentMethods;
-
-
-
-    @Override
-    public long getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(long id) {
-        this.id = id;
-    }
+    @JoinColumn(name="user_id")
+    private List<PaymentMethod> paymentMethods;
 
     public String getCpf() {
         return cpf;
@@ -51,7 +37,7 @@ public class Customer extends User{
         this.age = age;
     }
 
-    public ArrayList<Address> getAddresses() {
+    public List<Address> getAddresses() {
         return addresses;
     }
 
@@ -59,7 +45,7 @@ public class Customer extends User{
         this.addresses = addresses;
     }
 
-    public ArrayList<PaymentMethod> getPaymentMethods() {
+    public List<PaymentMethod> getPaymentMethods() {
         return paymentMethods;
     }
 

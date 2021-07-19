@@ -1,0 +1,554 @@
+{
+	"info": {
+		"_postman_id": "c5650082-d2fe-4006-a3da-ddf207961c17",
+		"name": "Imhungry api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Foods",
+			"item": [
+				{
+					"name": "List Food",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/food",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"food"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Food",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Pão com mortadela edit\",\n    \"description\": \"Pão delicioso com mortadela, feito em minas gerais\",\n    \"priceInCents\": 1200,\n    \"quantity\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/food/2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"food",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Food",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"Pão com mortadela\",\n    \"description\": \"Pão delicioso com mortadela, feito em minas gerais\",\n    \"priceInCents\": 1200,\n    \"quantity\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/food",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"food"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Food",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/food/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"food",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Address",
+			"item": [
+				{
+					"name": "Edit address",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"road\": \"Rua teste edit\",\n    \"district\": \"bairro teste\",\n    \"complement\": \"apartamento teste\",\n    \"number\": 10,\n    \"city\": {\n        \"id\": 3,\n        \"name\": \"Cidade teste edit\",\n        \"cep\": \"213325425\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/address/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"address",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"road\": \"Rua teste\",\n    \"district\": \"bairro teste\",\n    \"complement\": \"apartamento teste\",\n    \"number\": 10,\n    \"city\": {\n        //\"id\": 1, \n        \"name\": \"Cidade teste\",\n        \"cep\": \"213325425\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/address",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Address",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/address/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"address",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consumers",
+			"item": []
+		},
+		{
+			"name": "Restaurant",
+			"item": [
+				{
+					"name": "Edit Restaurant",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cnpj\": \"314134134\",\n    \"address\": {\n        \"road\": \"Rua teste\",\n        \"district\": \"bairro teste\",\n        \"complement\": \"apartamento teste\",\n        \"number\": 10,\n        \"city\": {\n            \"name\": \"Cidade teste\",\n            \"cep\": \"213325425\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/restaurant/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurant",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Restaurant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cnpj\": \"314134134\",\n    \"address\": {\n        \"road\": \"Rua teste\",\n        \"district\": \"bairro teste\",\n        \"complement\": \"apartamento teste\",\n        \"number\": 10,\n        \"city\": {\n            \"name\": \"Cidade teste\",\n            \"cep\": \"213325425\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/restaurant",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/restaurant",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"restaurant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": 1,\n    \"restaurantId\": 2,\n    \"status\": \"iniciada\",\n    \"date\": \"2021-09-01\",\n    \"totalPrice\": 3005,\n    \"foods\": [\n        {\n            \"title\": \"Pão com mortadela\",\n            \"description\": \"Pão delicioso com mortadela, feito em minas gerais\",\n            \"priceInCents\": 1200,\n            \"quantity\": 2\n        },\n        {\n            \"title\": \"Pão com mortadela 2\",\n            \"description\": \"Pão delicioso com mortadela, feito em minas gerais\",\n            \"priceInCents\": 1200,\n            \"quantity\": 2\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/order",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/order",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/order/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"order",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "PaymentMethod",
+			"item": [
+				{
+					"name": "Create Payment Method",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"credit\",\n    \"number\": \"1234-5676-7543-3432\",\n    \"cardName\": \"Card1\",\n    \"expiration\": \"2025-09-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/payment-method",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"payment-method"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/payment-method/7",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"payment-method",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LIst Payment Methods",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/payment-method",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"payment-method"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/payment-method/9",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"payment-method",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Edit User",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"teste2@teste.com\",\n    \"name\": \"Jonh Doe\",\n    \"password\": \"123456\",\n    \"age\": 12,\n    \"cpf\": \"12334556678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"teste@teste.com\",\n    \"name\": \"Jonh Doe\",\n    \"password\": \"123456\",\n    \"age\": 12,\n    \"cpf\": \"12334556678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/3",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/6",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

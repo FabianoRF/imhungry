@@ -9,12 +9,14 @@ public class Address {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
-    @OneToOne
-    private User user;
     private String road;
     private String district;
     private String complement;
     private int number;
+
+    @OneToOne(mappedBy = "address")
+    private Restaurant restaurant;
+
     @OneToOne
     private City city;
 
@@ -24,14 +26,6 @@ public class Address {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public String getRoad() {

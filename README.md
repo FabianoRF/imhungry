@@ -8,4 +8,6 @@ Para executar o projeto:
 
 3. Para editar configurações referentes ao BD entrar no arquivo: `src/main/resources/application.properties`
 
+4. Collection do postman disponivel da pasta raiz do projeto
+
 docker run --name imhungry-mysql -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=teste123 -e MYSQL_DATABASE=imhungry -e MYSQL_USER=imhungryuser -e MYSQL_PASSWORD=teste123 mysql

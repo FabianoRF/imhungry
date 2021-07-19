@@ -4,6 +4,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 
+
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="class")
@@ -13,8 +14,8 @@ public class PaymentMethod {
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
     private String type;
-    private ArrayList<PaymentMethod> number;
-    private String cardNAme;
+    private String number;
+    private String cardName;
     private Date expiration;
 
     public long getId() {
@@ -33,20 +34,20 @@ public class PaymentMethod {
         this.type = type;
     }
 
-    public ArrayList<PaymentMethod> getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(ArrayList<PaymentMethod> number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
-    public String getCardNAme() {
-        return cardNAme;
+    public String getCardName() {
+        return cardName;
     }
 
-    public void setCardNAme(String cardNAme) {
-        this.cardNAme = cardNAme;
+    public void setCardName(String cardName) {
+        this.cardName = cardName;
     }
 
     public Date getExpiration() {

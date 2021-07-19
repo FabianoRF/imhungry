@@ -9,13 +9,10 @@ public class Food {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private long id;
-    @OneToOne
-    private Address title;
+    private String title;
     private String description;
-    private String price;
-    private  int quantity;
-    @ManyToOne
-    private  Restaurant restaurant;
+    private int priceInCents;
+    private int quantity;
 
     public long getId() {
         return id;
@@ -25,11 +22,11 @@ public class Food {
         this.id = id;
     }
 
-    public Address getTitle() {
+    public String getTitle() {
         return title;
     }
 
-    public void setTitle(Address title) {
+    public void setTitle(String title) {
         this.title = title;
     }
 
@@ -41,12 +38,12 @@ public class Food {
         this.description = description;
     }
 
-    public String getPrice() {
-        return price;
+    public int getPrice() {
+        return priceInCents;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setPrice(int priceInCents) {
+        this.priceInCents = priceInCents;
     }
 
     public int getQuantity() {
@@ -55,13 +52,5 @@ public class Food {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-    }
-
-    public Restaurant getRestaurant() {
-        return restaurant;
-    }
-
-    public void setRestaurant(Restaurant restaurant) {
-        this.restaurant = restaurant;
     }
 }
